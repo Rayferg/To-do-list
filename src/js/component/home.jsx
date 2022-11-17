@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 //include images into your bundle
 import rigoImage from "../../img/rigo-baby.jpg";
 
@@ -19,12 +20,12 @@ const Home = () => {
         </li>
         {todos.map((item, index) => (
 		<li>
-         {item}{""}<i className="fa-regular fa-hourglass" onClick={() => setTodos(
+         {item}{""}<FontAwesomeIcon icon={faTrash} onClick={() => setTodos(
 			todos.filter(
 				(t, currentIndex) => index != currentIndex
 				)
 			)
-		 }></i> <i className="fs fa-trash"></i>
+		 }></FontAwesomeIcon>
         </li>
 		))}
       </ul>
